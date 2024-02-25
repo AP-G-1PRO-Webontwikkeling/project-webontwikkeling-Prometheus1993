@@ -6,7 +6,7 @@
       "age": 17,
       "isActive": true,
       "birthDate": "1991-12-18",
-      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/yuki-nagato.webp",
+      "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/yuki-nagato.webp?token=GHSAT0AAAAAACN2EPPICC5HNVVFSVH4S544ZO32LDQ",
       "role": "Support",
       "hobbies": ["Lezen", "Schaken", "Programmeren"],
       "powers": {
@@ -15,7 +15,7 @@
         "strength": 95,
         "isAlien": true,
         "specialMove": "Chronological Manipulation",
-        "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/yuki-nagato-powercard.webp"
+        "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/yuki-nagato-powercard.webp?token=GHSAT0AAAAAACN2EPPIORMQGBYAWDCXOKLOZO32LPQ"
       }
     },
     {
@@ -25,7 +25,7 @@
       "age": 19,
       "isActive": true,
       "birthDate": "1995-05-05",
-      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/monkeyD-luffy.webp",
+      "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/monkeyD-luffy.webp?token=GHSAT0AAAAAACN2EPPIXNQJEVPW435CJTLQZO32MGA",
       "role": "Captain",
       "hobbies": ["Avontuur", "Vechten", "Eten"],
       "powers": {
@@ -34,7 +34,7 @@
         "strength": 88,
         "isHuman": true,
         "specialMove": "Gear Second",
-        "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/monkeyD-luffy-powercard.webp"
+        "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/monkeyD-luffy-powercard.webp?token=GHSAT0AAAAAACN2EPPIWRX4L6TUEG2VEXHUZO32MMA"
       }
     },
     {
@@ -44,7 +44,7 @@
       "age": 25,
       "isActive": false,
       "birthDate": "2006-07-02",
-      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/saber.webp",
+      "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/saber.webp?token=GHSAT0AAAAAACN2EPPJLTSZMRRTWMT53VQOZO32M2Q",
       "role": "Servant",
       "hobbies": ["Vechten voor eer", "Beschermen van de zwakken"],
       "powers": {
@@ -53,7 +53,7 @@
         "strength": 99,
         "isHeroicSpirit": true,
         "specialMove": "Invisible Air",
-        "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/saber-powercard.webp"
+        "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/saber-powercard.webp?token=GHSAT0AAAAAACN2EPPJADNXERXY3GEBZ53CZO32NBQ"
       }
     },
     {
@@ -63,7 +63,7 @@
       "age": 18,
       "isActive": true,
       "birthDate": "2007-09-30",
-      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/asuna-yuuki.webp",
+      "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/asuna-yuuki.webp?token=GHSAT0AAAAAACN2EPPJJZCJ7BJCXGID2S6MZO32NOQ",
       "role": "Vice Commander",
       "hobbies": ["Koken", "Vechten"],
       "powers": {
@@ -72,7 +72,7 @@
         "strength": 90,
         "isHuman": true,
         "specialMove": "Star Splash",
-        "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/asuna-yuuki-powercard.webp"
+        "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/asuna-yuuki-powercard.webp?token=GHSAT0AAAAAACN2EPPJ3ETQ6CG3QUHX2UQQZO32NUA"
       }
     },
     {
@@ -82,7 +82,7 @@
       "age": 15,
       "isActive": true,
       "birthDate": "2005-02-03",
-      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/edward-elric.webp",
+      "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/edward-elric.webp?token=GHSAT0AAAAAACN2EPPIUWVMKT6CBNUV6JKYZO32OBQ",
       "role": "Alchemist",
       "hobbies": ["Alchemie", "Reizen"],
       "powers": {
@@ -91,7 +91,7 @@
         "strength": 88,
         "isHuman": true,
         "specialMove": "Transmutation",
-        "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/edward-elric-powercard.webp"
+        "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/edward-elric-powercard.webp?token=GHSAT0AAAAAACN2EPPIUQNRTVUW2FY5UH7SZO32OKQ"
       }
     },
     {
@@ -101,7 +101,7 @@
       "age": 19,
       "isActive": true,
       "birthDate": "2001-02-10",
-      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/mikasa-ackermann.webp",
+      "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/mikasa-ackermann.webp?token=GHSAT0AAAAAACN2EPPJMAZRFZYGB3IMM7VIZO32OYQ",
       "role": "Soldier",
       "hobbies": ["Beschermen", "Vechten"],
       "powers": {
@@ -110,7 +110,7 @@
         "strength": 95,
         "isHuman": true,
         "specialMove": "Ackerman Power",
-        "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/mikasa-ackermann-powercard.webp"
+        "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/mikasa-ackermann-powercard.webp?token=GHSAT0AAAAAACN2EPPIQ32FVQ3M67SCLSM4ZO32O6Q"
       }
     },
     {
@@ -120,7 +120,7 @@
       "age": 17,
       "isActive": true,
       "birthDate": "1999-10-10",
-      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/naruto-uzumaki.webp",
+      "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/naruto-uzumaki.webp?token=GHSAT0AAAAAACN2EPPIXW3YS2J5L37RU6DWZO32PKQ",
       "role": "Ninja",
       "hobbies": ["Ramen eten", "Trainen"],
       "powers": {
@@ -129,7 +129,7 @@
         "strength": 92,
         "isHuman": true,
         "specialMove": "Rasengan",
-        "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/naruto-uzumaki-powercard.webp"
+        "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/naruto-uzumaki-powercard.webp?token=GHSAT0AAAAAACN2EPPIZOKJXYBINOKBPI76ZO32PPQ"
       }
     },
     {
@@ -139,7 +139,7 @@
       "age": 37,
       "isActive": true,
       "birthDate": "1984-04-16",
-      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/goku.webp",
+      "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/goku.webp?token=GHSAT0AAAAAACN2EPPIMTU2IGHXC4CPBWJAZO32P3Q",
       "role": "Martial Artist",
       "hobbies": ["Vechten", "Trainen", "Eten"],
       "powers": {
@@ -148,7 +148,7 @@
         "strength": 99,
         "isAlien": true,
         "specialMove": "Kamehameha",
-        "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/goku-powercard.webp"
+        "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/goku-powercard.webp?token=GHSAT0AAAAAACN2EPPI4F2FVRXQQULZXU6UZO32QKQ"
       }
     },
     {
@@ -158,7 +158,7 @@
       "age": 18,
       "isActive": true,
       "birthDate": "2006-12-05",
-      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/lelouch-lamperouge.webp",
+      "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/lelouch-lamperouge.webp?token=GHSAT0AAAAAACN2EPPIG4ZXHLCCLBVFNX54ZO32QWA",
       "role": "Rebel",
       "hobbies": ["Schaken", "Strategieën bedenken"],
       "powers": {
@@ -167,7 +167,7 @@
         "strength": 100,
         "isHuman": true,
         "specialMove": "Command",
-        "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/lelouch-lamperouge-powercard.webp"
+        "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/lelouch-lamperouge-powercard.webp?token=GHSAT0AAAAAACN2EPPJZBDKJNUMJMGOOETSZO32RAA"
       }
     },
     {
@@ -177,7 +177,7 @@
       "age": 25,
       "isActive": true,
       "birthDate": "2012-07-03",
-      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/saitama.webp",
+      "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/saitama.webp?token=GHSAT0AAAAAACN2EPPIQHDN6IK766NF2RP4ZO32RLQ",
       "role": "Hero",
       "hobbies": ["Boodschappen doen", "Lezen van manga"],
       "powers": {
@@ -186,7 +186,7 @@
         "strength": 100,
         "isHuman": true,
         "specialMove": "Serious Punch",
-        "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/saitama-powercard.webp"
+        "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/saitama-powercard.webp?token=GHSAT0AAAAAACN2EPPJEEOCTN52BM54JSEKZO32RVA"
       }
     }
   ]
