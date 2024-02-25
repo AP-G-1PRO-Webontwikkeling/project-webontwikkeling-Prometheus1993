@@ -1,7 +1,5 @@
 # project-webontwikkeling-Prometheus1993
 
-# Web-ontwikkeling-Project
-
 Deze repository bevat alle opdrachten en code voor mijn project van Web-Ontwikkeling in AP '24
 
 # Anime/Manga Card Game JSON Project
