@@ -1,0 +1,83 @@
+[
+    {
+      "id": 101,
+      "type": "Reality Manipulation",
+      "strength": 95,
+      "isAlien": true,
+      "specialMove": "Chronological Manipulation",
+      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/yuki-nagato-powercard.webp"
+    },
+    {
+      "id": 102,
+      "type": "Gum-Gum Fruit",
+      "strength": 88,
+      "isHuman": true,
+      "specialMove": "Gear Second",
+      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/monkeyD-luffy-powercard.webpg"
+    },
+    {
+      "id": 103,
+      "type": "Excalibur",
+      "strength": 99,
+      "isHeroicSpirit": true,
+      "specialMove": "Invisible Air",
+      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/saber-powercard.webp"
+    },
+  
+    {
+      "id": 104,
+      "type": "Rapier Mastery",
+      "strength": 90,
+      "isHuman": true,
+      "specialMove": "Star Splash",
+      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/asuna-yuuki-powercard.webp"
+    },
+    {
+      "id": 105,
+      "type": "Alchemy",
+      "strength": 88,
+      "isHuman": true,
+      "specialMove": "Transmutation",
+      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/edward-elric-powercard.webp"
+    },
+    {
+      "id": 106,
+      "type": "Combat Skills",
+      "strength": 95,
+      "isHuman": true,
+      "specialMove": "Ackerman Power",
+      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/mikasa-ackermann-powercard.webp"
+    },
+    {
+      "id": 107,
+      "type": "Ninjutsu",
+      "strength": 92,
+      "isHuman": true,
+      "specialMove": "Rasengan",
+      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/naruto-uzumaki-powercard.webp"
+    },
+    {
+      "id": 108,
+      "type": "Saiyan",
+      "strength": 99,
+      "isAlien": true,
+      "specialMove": "Kamehameha",
+      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/goku-powercard.webp"
+    },
+    {
+      "id": 109,
+      "type": "Geass",
+      "strength": 100,
+      "isHuman": true,
+      "specialMove": "Command",
+      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/lelouch-lamperouge-powercard.webp"
+    },
+    {
+      "id": 110,
+      "type": "One Punch",
+      "strength": 100,
+      "isHuman": true,
+      "specialMove": "Serious Punch",
+      "imageUrl": "https://raw.githubusercontent.com/Prometheus1993/Web-ontwikkeling-Project-JO/main/assets/images/saitama-powercard.webp"
+    }
+  ]
