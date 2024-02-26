@@ -12,7 +12,7 @@ Dit project bevat een reeks JSON-bestanden ontworpen om een anime/manga card gam
 
 - `characters.json`: Bevat een lijst van anime/manga personages, elk met specifieke eigenschappen zoals naam, beschrijving, leeftijd, actieve status, geboortedatum, afbeeldings-URL, rol, hobby's en krachten.
 - `powers.json`: Detailleert de verschillende krachten of vaardigheden die door de personages in het spel gebruikt kunnen worden, inclusief een unieke ID, type, sterkte, en of het personage menselijk is of niet.
-- 
+
 ## Eigenschappen
 
 Elk personage in `characters.json` heeft de volgende eigenschappen:
