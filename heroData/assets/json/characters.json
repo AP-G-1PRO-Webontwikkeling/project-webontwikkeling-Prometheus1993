@@ -13,7 +13,7 @@
         "id": 101,
         "type": "Reality Manipulation",
         "strength": 95,
-        "isAlien": true,
+        "isHuman": false,
         "specialMove": "Chronological Manipulation",
         "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/yuki-nagato-powercard.webp?token=GHSAT0AAAAAACN2EPPIORMQGBYAWDCXOKLOZO32LPQ"
       }

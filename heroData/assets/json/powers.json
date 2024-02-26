@@ -3,7 +3,7 @@
       "id": 101,
       "type": "Reality Manipulation",
       "strength": 95,
-      "isAlien": true,
+      "isHuman": false,
       "specialMove": "Chronological Manipulation",
       "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/yuki-nagato-powercard.webp?token=GHSAT0AAAAAACN2EPPIORMQGBYAWDCXOKLOZO32LPQ"
     },
@@ -19,7 +19,7 @@
       "id": 103,
       "type": "Excalibur",
       "strength": 99,
-      "isHeroicSpirit": true,
+      "isHuman": false,
       "specialMove": "Invisible Air",
       "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/saber-powercard.webp?token=GHSAT0AAAAAACN2EPPJADNXERXY3GEBZ53CZO32NBQ"
     },
@@ -60,7 +60,7 @@
       "id": 108,
       "type": "Saiyan",
       "strength": 99,
-      "isAlien": true,
+      "isHuman": false,
       "specialMove": "Kamehameha",
       "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/images/goku-powercard.webp?token=GHSAT0AAAAAACN2EPPI4F2FVRXQQULZXU6UZO32QKQ"
     },
