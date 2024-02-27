@@ -1,4 +1,4 @@
-# project-webontwikkeling-Prometheus1993
+# project-webontwikkeling-Jesus O'Bulan
 
 Deze repository bevat alle opdrachten en code voor mijn project van Web-Ontwikkeling in AP '24
 
@@ -11,7 +11,7 @@ Dit project bevat een reeks JSON-bestanden ontworpen om een anime/manga card gam
 ## Bestandsstructuur
 
 - `characters.json`: Bevat een lijst van anime/manga personages, elk met specifieke eigenschappen zoals naam, beschrijving, leeftijd, actieve status, geboortedatum, afbeeldings-URL, rol, hobby's en krachten.
-- `powers.json`: Detailleert de verschillende krachten of vaardigheden die door de personages in het spel gebruikt kunnen worden, inclusief een unieke ID, type, sterkte, en of het personage menselijk is, een alien, of een heroïsche geest.
+- `powers.json`: Detailleert de verschillende krachten of vaardigheden die door de personages in het spel gebruikt kunnen worden, inclusief een unieke ID, type, sterkte, en of het personage menselijk is of niet.
 
 ## Eigenschappen
 
@@ -30,4 +30,4 @@ Elk personage in `characters.json` heeft de volgende eigenschappen:
 
 ## Hoe te Gebruiken
 
-Dit project kan worden gebruikt als een database voor het ontwikkelen van een anime/manga-thema kaartspel, of als een educatieve bron voor fans. Ontwikkelaars kunnen de JSON-bestanden integreren in hun applicaties om dynamisch personagekaarten en hun vaardigheden te genereren.
+Dit project kan worden gebruikt als een database voor het ontwikkelen van een anime/manga-thema kaartspel, of als een educatieve bron voor fans.
