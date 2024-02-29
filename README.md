@@ -31,3 +31,7 @@ Elk personage in `characters.json` heeft de volgende eigenschappen:
 ## Hoe te Gebruiken
 
 Dit project kan worden gebruikt als een database voor het ontwikkelen van een anime/manga-thema kaartspel, of als een educatieve bron voor fans.
+
+## Creator
+
+Jesus O'Bulan
