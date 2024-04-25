@@ -1,4 +1,5 @@
 export interface Power {
+  [key: string]: any;
   id: number;
   type: string;
   strength: number;
@@ -8,6 +9,7 @@ export interface Power {
 }
 
 export interface Character {
+  [key: string]: any;
   id: number;
   name: string;
   description: string;
@@ -17,7 +19,7 @@ export interface Character {
   imageUrl: string;
   role: string;
   hobbies: string[];
-  powers: Power;
+  powers: Power[]; // Nu gedefinieerd als een array van Power
 }
 
 export {};
