@@ -1,6 +1,5 @@
 const charactersUrl =
-  "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroData/assets/json/characters.json";
-
+"https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroesData/assets/json/characters.json"
 
 const FetchHeroesData = async () => {
   const loadData = await fetch(charactersUrl);
