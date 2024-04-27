@@ -6,7 +6,7 @@
     "age": 17,
     "isActive": true,
     "birthDate": "1991-12-18",
-    "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroesData/assets/images/characterImages/yuki-nagato.webp",
+    "imageUrl": "https://dl.dropboxusercontent.com/scl/fi/k3vwxivk6f43ff5ae8qhe/yuki-nagato.webp",
     "role": "Support",
     "hobbies": ["Lezen", "Schaken", "Programmeren"],
     "powers": {
@@ -102,7 +102,7 @@
     "age": 19,
     "isActive": true,
     "birthDate": "2001-02-10",
-    "imageUrl": "https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/blob/main/heroesData/assets/images/characterImages/mikasa-ackermann.jpeg",
+    "imageUrl": "https://dl.dropboxusercontent.com/scl/fi/eunsx94e9x0vkqifffb1f/mikasa-ackermann.jpeg",
     "role": "Soldier",
     "hobbies": ["Beschermen", "Vechten"],
     "powers": {
