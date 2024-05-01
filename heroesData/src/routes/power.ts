@@ -1,7 +1,7 @@
 import express from "express";
-import { FetchHeroesData, FetchPowersData } from "../models/helper-functions";
+import { FetchHeroesData} from "../models/helper-functions";
 import { Character, Power } from "../interfaces/types";
-import { cp } from "fs";
+
 
 const router = express.Router();
 
