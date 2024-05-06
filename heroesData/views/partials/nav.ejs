@@ -1,24 +1,33 @@
 <!-- Navbar -->
+
 <nav class="bg-gray-800 text-yellow-400 p-4">
-  <div class="container mx-auto flex flex-wrap items-center justify-between">
-    <!-- Navbar links -->
-    <div class="flex order-1 w-auto">
-      <ul class="flex space-x-8">
-        <li>
-          <a href="/" class="hover:text-gray-300">Characters</a>
-        </li>
-        <li>
-          <a href="/power" class="hover:text-gray-300">Powers</a>
-        </li>
-      </ul>
-    </div>
+  <div class="container mx-auto flex items-center justify-between">
+    <!-- Navbar Links -->
+    <ul class="flex space-x-8">
+      <li>
+        <a href="/" class="hover:text-gray-300">Characters</a>
+      </li>
+      <li>
+        <a href="/power" class="hover:text-gray-300">Powers</a>
+      </li>
+    </ul>
+
     <!-- Search Bar -->
-    <div class="flex order-2">
-      <form action="/" method="get">
-        <label for="search"></label>
-        <input type="text" id="search" name="q" value="<%= q %>" />
-        <button type="submit">Zoeken</button>
-      </form>
-    </div>
+    <form action="/" method="get" class="flex items-center">
+      <label for="search" class="sr-only"></label>
+      <input
+        type="text"
+        id="search"
+        name="q"
+        value="<%= q %>"
+        class="bg-gray-700 text-yellow-400 border-2 border-gray-600 rounded-lg py-1 px-2"
+      />
+      <button
+        type="submit"
+        class="bg-yellow-500 text-gray-800 rounded-lg ml-2 py-1 px-2"
+      >
+        Zoeken
+      </button>
+    </form>
   </div>
 </nav>
