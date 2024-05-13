@@ -5,19 +5,23 @@ import { config } from "dotenv";
 config();
 
 // Configureer de URL met het juiste MongoDB URI schema.
-const uri = process.env.MONGODB_URI || '';
+const uri = process.env.MONGODB_URI || "";
 const client = new MongoClient(uri);
+let db: Db;
 
 // Database connection function
 async function connectDB(): Promise<Db> {
-  try {
-    await client.connect();
-    console.log("Connected to the database");
-    return client.db("Heroes");
-  } catch (err) {
-    console.error("Failed to connect to MongoDB", err);
-    throw new Error("Database connection failed");
+  if (!db) {
+    try {
+      await client.connect();
+      db = client.db("Heroes");
+      console.log("Connected to the database");
+    } catch (err) {
+      console.error("Failed to connect to MongoDB", err);
+      throw new Error("Database connection failed");
+    }
   }
+  return db;
 }
 
 // Haal alle helden op uit de database.
@@ -32,6 +36,17 @@ export async function getHeroById(id: number): Promise<Character | null> {
   const db = await connectDB();
   const collection = db.collection<Character>("heroes");
   return await collection.findOne({ id: id });
+}
+
+// Update een held in de database.
+export async function updateHero(id: number, updateData: Partial<Character>): Promise<void> {
+  const collection = (await connectDB()).collection<Character>("heroes");
+  const updateResult = await collection.updateOne({ id: id }, { $set: updateData });
+  if (updateResult.modifiedCount === 0) {
+    console.log("No character was updated.");
+  } else {
+    console.log("Character updated successfully.");
+  }
 }
 
 // Haal alle superkrachten op uit de database.
