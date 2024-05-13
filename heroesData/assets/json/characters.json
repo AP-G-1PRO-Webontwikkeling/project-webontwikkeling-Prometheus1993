@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Yuki Nagato",
-    "description": "Een mysterieus en stil lid van de SOS Brigade met buitengewone krachten.",
+    "description": "Een mysterieus en stil lid van de SOS Brigade.",
     "age": 17,
     "isActive": true,
     "birthDate": "1991-12-18",
@@ -22,7 +22,7 @@
   {
     "id": 2,
     "name": "Monkey D. Luffy",
-    "description": "Een enthousiaste jonge piraat die droomt van het vinden van de One Piece en het worden van de Pirate King.",
+    "description": "Een jonge piraat die droomt van het vinden van de One Piece.",
     "age": 19,
     "isActive": true,
     "birthDate": "1995-05-05",
@@ -41,7 +41,7 @@
   {
     "id": 3,
     "name": "Saber",
-    "description": "Een krachtige en nobele ridder uit de Arthuriaanse legende, opgeroepen als de Servant van de protagonist.",
+    "description": "Een krachtige en nobele ridder uit de Arthuriaanse legende.",
     "age": 25,
     "isActive": false,
     "birthDate": "2006-07-02",
@@ -60,7 +60,7 @@
   {
     "id": 4,
     "name": "Asuna Yuuki",
-    "description": "Een bekwame zwaardvechter bekend als de 'Lightning Flash' in de wereld van Sword Art Online.",
+    "description": "Een bekwame zwaardvechter bekend als de 'Lightning Flash'.",
     "age": 18,
     "isActive": true,
     "birthDate": "2007-09-30",
@@ -79,7 +79,7 @@
   {
     "id": 5,
     "name": "Edward Elric",
-    "description": "Een jonge alchemist op zoek naar de Philosopher's Stone om zijn lichaam te herstellen.",
+    "description": "Een alchemist op zoek naar de Philosopher's Stone.",
     "age": 15,
     "isActive": true,
     "birthDate": "2005-02-03",
@@ -136,7 +136,7 @@
   {
     "id": 8,
     "name": "Goku",
-    "description": "Een Saiyan krijger die altijd streeft naar grotere kracht en nieuwe uitdagingen.",
+    "description": "Een Saiyan krijger die streeft naar nieuwe uitdagingen.",
     "age": 37,
     "isActive": true,
     "birthDate": "1984-04-16",
@@ -174,7 +174,7 @@
   {
     "id": 10,
     "name": "Saitama",
-    "description": "Een superheld die elke tegenstander met één slag kan verslaan, op zoek naar een waardige uitdaging.",
+    "description": "Een superheld die elke tegenstander met één slag kan verslaan.",
     "age": 25,
     "isActive": true,
     "birthDate": "2012-07-03",

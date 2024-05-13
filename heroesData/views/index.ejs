@@ -59,6 +59,7 @@
               Hobbies
             </a>
           </th>
+          <th class="py-3 px-6">Actions</th>
         </tr>
       </thead>
 
@@ -94,6 +95,7 @@
           <td class="py-4 px-6 text-center">
             <%= character.hobbies.join(', ') %>
           </td>
+          <td><a href="/characters/<%= character.id %>/edit" class="edit-button">Edit</a></td>
         </tr>
         <% }; %>
       </tbody>
