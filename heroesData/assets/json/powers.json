@@ -3,7 +3,6 @@
     "id": 101,
     "type": "Reality Manipulation",
     "strength": 95,
-    "isAlien": true,
     "isHuman": false,
     "specialMove": "Chronological Manipulation",
     "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroesData/assets/images/powerImages/yuki-nagato-power.webp"
@@ -20,7 +19,6 @@
     "id": 103,
     "type": "Excalibur",
     "strength": 99,
-    "isHeroicSpirit": true,
     "isHuman": false,
     "specialMove": "Invisible Air",
     "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroesData/assets/images/powerImages/saber-power.webp"
@@ -62,7 +60,6 @@
     "id": 108,
     "type": "Saiyan",
     "strength": 99,
-    "isAlien": true,
     "isHuman": false,
     "specialMove": "Kamehameha",
     "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroesData/assets/images/powerImages/naruto-uzumaki-power.webp"

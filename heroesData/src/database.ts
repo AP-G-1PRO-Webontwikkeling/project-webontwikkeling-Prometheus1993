@@ -1,84 +1,78 @@
-import e from "express";
-import { MongoClient } from "mongodb";
+import { MongoClient, Db } from "mongodb";
+import { Power, Character } from "./interfaces/types";
+import { config } from "dotenv";
+
+config();
 
 // Configureer de URL met het juiste MongoDB URI schema.
-const uri =
-  "mongodb+srv://jesus:jesus@clusterap.zyr6ufp.mongodb.net/?retryWrites=true&w=majority&appName=ClusterAP";
+const uri = process.env.MONGODB_URI || '';
 const client = new MongoClient(uri);
 
-// Creëer een variabele om de database te beheren na verbinding.
-let dbInstance: any;
-
-// Eenmalige verbinding setup functie.
-async function connectDB() {
-  if (dbInstance) {
-    return dbInstance;
-  }
+// Database connection function
+async function connectDB(): Promise<Db> {
   try {
     await client.connect();
-    dbInstance = client.db("Heroes");
     console.log("Connected to the database");
+    return client.db("Heroes");
   } catch (err) {
     console.error("Failed to connect to MongoDB", err);
-    // Optioneel: gooi een error om aan te geven dat de verbinding mislukt is.
     throw new Error("Database connection failed");
   }
-  return dbInstance;
 }
 
 // Haal alle helden op uit de database.
-export async function getHeroes() {
+export async function getHeroes(): Promise<Character[]> {
   const db = await connectDB();
-  const collection = db.collection("heroes");
+  const collection = db.collection<Character>("heroes");
   return await collection.find({}).toArray();
 }
 
 // Haal een held op via ID.
-export async function getHeroById(id: number) {
+export async function getHeroById(id: number): Promise<Character | null> {
   const db = await connectDB();
-  const collection = db.collection("heroes");
+  const collection = db.collection<Character>("heroes");
   return await collection.findOne({ id: id });
 }
 
 // Haal alle superkrachten op uit de database.
-export async function getPowers() {
+export async function getPowers(): Promise<Power[]> {
   const db = await connectDB();
-  const collection = db.collection("powers");
+  const collection = db.collection<Power>("powers");
   return await collection.find({}).toArray();
 }
 
 // Haal een superkracht op via ID.
-export async function getPowerById(id: number) {
+export async function getPowerById(id: number): Promise<Power | null> {
   const db = await connectDB();
-  const collection = db.collection("powers");
-  return await collection;
+  const collection = db.collection<Power>("powers");
+  return await collection.findOne({ id: id });
 }
 
 // Controleer de aanwezigheid van gegevens en haal data op indien niet aanwezig.
-export async function checkAndFetchDataHeroes() {
+export async function checkAndFetchDataHeroes(): Promise<void> {
   const db = await connectDB();
-  const collection = db.collection("heroes");
+  const collection = db.collection<Character>("heroes");
   const dataExists = await collection.findOne({});
   if (!dataExists) {
     const response = await fetch(
       "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroesData/assets/json/characters.json"
     );
-    const data = await response.json();
+    const data: Character[] = await response.json();
     await collection.insertMany(data);
     console.log("Data fetched and saved to MongoDB");
   } else {
     console.log("Data already exists in MongoDB");
   }
 }
-export async function checkAndFetchDataPowers() {
+export async function checkAndFetchDataPowers(): Promise<void> {
   const db = await connectDB();
-  const collection = db.collection("powers");
+  const collection = db.collection<Power>("powers");
   const dataExists = await collection.findOne({});
   if (!dataExists) {
     const response = await fetch(
       "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroesData/assets/json/powers.json"
     );
-    const data = await response.json();
+    const data: Power[] = await response.json();
     await collection.insertMany(data);
     console.log("Data fetched and saved to MongoDB");
   } else {

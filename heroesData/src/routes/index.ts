@@ -8,14 +8,15 @@ router.get("/", async (req, res) => {
     const query = (req.query.q || "").toString().toLowerCase();
     let characters = await getHeroes();
 
-    const filteredCharacters = characters.filter((character: { name: string; }) =>
-      character.name.toLowerCase().includes(query)
+    const filteredCharacters = characters.filter(
+      (character: { name: string }) =>
+        character.name.toLowerCase().includes(query)
     );
 
     const sortField = (req.query.sortField || "name").toString();
     const sortDirection = (req.query.sortDirection || "asc").toString();
 
-    filteredCharacters.sort((a: { [x: string]: any; }, b: { [x: string]: any; }) => {
+    filteredCharacters.sort((a: any, b: any) => {
       let fieldA = a[sortField];
       let fieldB = b[sortField];
 
@@ -63,7 +64,7 @@ router.get("/character/:id", async (req, res) => {
       return res.status(404).send("Character not found");
     }
 
-    res.render("characterPage", { character, q: query});
+    res.render("characterPage", { character, q: query });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");

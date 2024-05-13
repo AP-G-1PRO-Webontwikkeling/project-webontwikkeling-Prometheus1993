@@ -1,15 +1,12 @@
 import express from "express";
 import { getPowers, getPowerById } from "../database";
-import { Character, Power } from "../interfaces/types";
 
 const router = express.Router();
-
-// The /power route will display all the powers of the characters.
 
 router.get("/power", async (req, res) => {
   try {
     const query = (req.query.q || "").toString().toLowerCase();
-    let powers= await getPowers();
+    let powers = await getPowers();
 
     const filteredPowers = powers.filter((power: { type: string }) =>
       power.type.toLowerCase().includes(query)
@@ -18,7 +15,7 @@ router.get("/power", async (req, res) => {
     const sortField = (req.query.sortField as string) || "strength";
     const sortDirection = (req.query.sortDirection as string) || "asc";
 
-    filteredPowers.sort((a: { [x: string]: any; }, b: { [x: string]: any; }) => {
+    filteredPowers.sort((a: any, b: any) => {
       let fieldA = a[sortField];
       let fieldB = b[sortField];
 
@@ -34,7 +31,6 @@ router.get("/power", async (req, res) => {
       }
     });
 
-    // Render the template with filtered and sorted powers
     res.render("powers", {
       powers: filteredPowers,
       sortField,
@@ -47,11 +43,9 @@ router.get("/power", async (req, res) => {
   }
 });
 
-// The /power/:powerId route will display the details of a specific power.
-
-router.get("/power/:powerId", async (req, res) => {
+router.get("/power/:id", async (req, res) => {
   try {
-    const id = parseInt(req.params.powerId);
+    const id = parseInt(req.params.id);
     const query = (req.query.q || "").toString().toLowerCase();
     const power = await getPowerById(id);
     if (!power) {
