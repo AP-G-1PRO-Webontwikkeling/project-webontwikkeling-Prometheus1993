@@ -8,7 +8,7 @@
     "birthDate": "1991-12-18",
     "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroesData/assets/images/characterImages/yuki-nagato.webp",
     "role": "Support",
-    "hobbies": ["Lezen", "Schaken", "Programmeren"],
+    "hobbies": ["Lezen", "Schaken"],
     "powers": {
       "id": 101,
       "type": "Reality Manipulation",
@@ -28,7 +28,7 @@
     "birthDate": "1995-05-05",
     "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroesData/assets/images/characterImages/monkey-d-luffy.webp",
     "role": "Captain",
-    "hobbies": ["Avontuur", "Vechten", "Eten"],
+    "hobbies": ["Avontuur", "Vechten"],
     "powers": {
       "id": 102,
       "type": "Gum-Gum Fruit",
@@ -47,7 +47,7 @@
     "birthDate": "2006-07-02",
     "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroesData/assets/images/characterImages/saber.webp",
     "role": "Servant",
-    "hobbies": ["Vechten voor eer", "Beschermen van de zwakken"],
+    "hobbies": ["Vechten voor eer"],
     "powers": {
       "id": 103,
       "type": "Excalibur",
@@ -180,7 +180,7 @@
     "birthDate": "2012-07-03",
     "imageUrl": "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroesData/assets/images/characterImages/saitama.webp",
     "role": "Hero",
-    "hobbies": ["Boodschappen doen", "Lezen van manga"],
+    "hobbies": ["Winkelen", "Lezen van manga"],
     "powers": {
       "id": 110,
       "type": "One Punch",
