@@ -1,9 +1,10 @@
 import express from "express";
-import { getHeroes, getHeroById, updateHero } from "../database";
+import { getHeroes, getHeroById, updateHero } from "../databases/database";
+import { ensureAuthenticated } from "../middlewares/auth";
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get("/", ensureAuthenticated, async (req, res) => {
   try {
     const query = (req.query.q || "").toString().toLowerCase();
     let characters = await getHeroes();
@@ -47,6 +48,7 @@ router.get("/", async (req, res) => {
       sortField,
       sortDirection,
       q: query,
+      user: req.user // Voeg de user variabele toe aan de render context
     });
   } catch (error) {
     console.error(error);
@@ -54,7 +56,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/character/:id", async (req, res) => {
+router.get("/character/:id", ensureAuthenticated, async (req, res) => {
   try {
     const id = parseInt(req.params.id);
     const query = (req.query.q || "").toString().toLowerCase();
@@ -64,7 +66,7 @@ router.get("/character/:id", async (req, res) => {
       return res.status(404).send("Character not found");
     }
 
-    res.render("characterPage", { character, q: query });
+    res.render("characterPage", { character, q: query, user: req.user });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
@@ -72,7 +74,7 @@ router.get("/character/:id", async (req, res) => {
 });
 
 // Route to display the edit form
-router.get("/characters/:id/edit", async (req, res) => {
+router.get("/characters/:id/edit", ensureAuthenticated, async (req, res) => {
   try {
     const id = parseInt(req.params.id);
     const query = (req.query.q || "").toString().toLowerCase();
@@ -80,7 +82,7 @@ router.get("/characters/:id/edit", async (req, res) => {
     if (!character) {
       res.status(404).send("Character not found");
     } else {
-      res.render("characterEditPage", { character, q: query});
+      res.render("characterEditPage", { character, q: query, user: req.user });
     }
   } catch (error) {
     console.error("Error fetching character:", error);
@@ -89,7 +91,7 @@ router.get("/characters/:id/edit", async (req, res) => {
 });
 
 // Route to handle the form submission
-router.post("/update-character/:id", async (req, res) => {
+router.post("/update-character/:id", ensureAuthenticated, async (req, res) => {
   try {
     const id = parseInt(req.params.id);
     const { name, description, age, role } = req.body;

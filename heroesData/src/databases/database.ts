@@ -1,5 +1,5 @@
 import { MongoClient, Db } from "mongodb";
-import { Power, Character } from "./interfaces/types";
+import { Power, Character } from "../interfaces/types";
 import { config } from "dotenv";
 
 config();
@@ -39,9 +39,15 @@ export async function getHeroById(id: number): Promise<Character | null> {
 }
 
 // Update een held in de database.
-export async function updateHero(id: number, updateData: Partial<Character>): Promise<void> {
+export async function updateHero(
+  id: number,
+  updateData: Partial<Character>
+): Promise<void> {
   const collection = (await connectDB()).collection<Character>("heroes");
-  const updateResult = await collection.updateOne({ id: id }, { $set: updateData });
+  const updateResult = await collection.updateOne(
+    { id: id },
+    { $set: updateData }
+  );
   if (updateResult.modifiedCount === 0) {
     console.log("No character was updated.");
   } else {

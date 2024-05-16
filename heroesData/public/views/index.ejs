@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <title>Heroes</title>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+  <nav class="bg-gray-800 text-yellow-400 p-4">
+    <div class="container mx-auto flex items-center justify-between">
+      <!-- Navbar Links -->
+      <ul class="flex space-x-8">
+        <li>
+          <a href="/" class="hover:text-gray-300">Characters</a>
+        </li>
+        <li>
+          <a href="/power" class="hover:text-gray-300">Powers</a>
+        </li>
+      </ul>
+  
+      <!-- Search Bar and Logout Button -->
+      <div class="flex items-center space-x-4">
+        <form action="/" method="get" class="flex items-center">
+          <label for="search" class="sr-only"></label>
+          <input type="text" id="search" name="q" value="<%= q %>" class="bg-gray-700 text-yellow-400 border-2 border-gray-600 rounded-lg py-1 px-2">
+          <button type="submit" class="bg-yellow-500 text-gray-800 rounded-lg ml-2 py-1 px-2">Zoeken</button>
+        </form>
+        <form action="/auth/logout" method="POST">
+          <button type="submit" class="bg-red-500 text-white rounded-lg py-1 px-4 hover:bg-red-600">Logout</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow w-full bg-gradient-to-r from-cyan-500 to-blue-500">
+    <div class="container mx-auto py-8">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left text-gray-500">
+          <thead class="text-xs text-gray-700 uppercase bg-gradient-to-r from-pink-500 to-yellow-500">
+            <tr>
+              <th class="py-3 px-6">Image</th>
+              <th class="py-3 px-6">
+                <a href="/?sortField=name&sortDirection=<%= sortField === 'name' && sortDirection === 'asc' ? 'desc' : 'asc' %>">
+                  Name
+                </a>
+              </th>
+              <th class="py-3 px-6">
+                <a href="/?sortField=description&sortDirection=<%= sortField === 'description' && sortDirection === 'asc' ? 'desc' : 'asc' %>">
+                  Description
+                </a>
+              </th>
+              <th class="py-3 px-6">
+                <a href="/?sortField=age&sortDirection=<%= sortField === 'age' && sortDirection === 'asc' ? 'desc' : 'asc' %>">
+                  Age
+                </a>
+              </th>
+              <th class="py-3 px-6">
+                <a href="/?sortField=active&sortDirection=<%= sortField === 'active' && sortDirection === 'asc' ? 'desc' : 'asc' %>">
+                  Active
+                </a>
+              </th>
+              <th class="py-3 px-6">
+                <a href="/?sortField=birthDate&sortDirection=<%= sortField === 'birthDate' && sortDirection === 'asc' ? 'desc' : 'asc' %>">
+                  Birth Date
+                </a>
+              </th>
+              <th class="py-3 px-6">
+                <a href="/?sortField=role&sortDirection=<%= sortField === 'role' && sortDirection === 'asc' ? 'desc' : 'asc' %>">
+                  Role
+                </a>
+              </th>
+              <th class="py-3 px-6">
+                <a href="/?sortField=hobbies&sortDirection=<%= sortField === 'hobbies' && sortDirection === 'asc' ? 'desc' : 'asc' %>">
+                  Hobbies
+                </a>
+              </th>
+              <% if (user.role === 'ADMIN') { %>
+              <th class="py-3 px-6">Actions</th>
+              <% } %>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% for (const character of characters) { %>
+            <tr class="bg-white border-b">
+              <td class="py-4 px-6">
+                <div class="flex justify-center">
+                  <a href="/character/<%= character.id %>">
+                    <img src="<%= character.imageUrl %>" alt="<%= character.name %>" class="object-cover rounded-lg" style="width: 150px; height: 250px; border: 3px solid rgb(171, 154, 0); margin: 5px;">
+                  </a>
+                </div>
+              </td>
+              <td class="py-4 px-6 text-center"><%= character.name %></td>
+              <td class="py-4 px-6 text-center"><%= character.description %></td>
+              <td class="py-4 px-6 text-center"><%= character.age %></td>
+              <td class="py-4 px-6 text-center"><%= character.isActive ? 'Yes' : 'No' %></td>
+              <td class="py-4 px-6 text-center"><%= character.birthDate %></td>
+              <td class="py-4 px-6 text-center"><%= character.role %></td>
+              <td class="py-4 px-6 text-center"><%= character.hobbies.join(', ') %></td>
+              <% if (user.role === 'ADMIN') { %>
+              <td class="py-4 px-6 text-center">
+                <a href="/characters/<%= character.id %>/edit" class="text-blue-500 hover:underline">Edit</a>
+              </td>
+              <% } %>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-yellow-400 p-4 text-center">
+    <p>&copy; 2023 Heroes. All rights reserved.</p>
+  </footer>
+</body>
+</html>

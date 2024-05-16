@@ -1,9 +1,9 @@
 import express from "express";
-import { getPowers, getPowerById } from "../database";
-
+import { getPowers, getPowerById } from "../databases/database";
+import { ensureAuthenticated } from "../middlewares/auth";
 const router = express.Router();
 
-router.get("/power", async (req, res) => {
+router.get("/power", ensureAuthenticated, async (req, res) => {
   try {
     const query = (req.query.q || "").toString().toLowerCase();
     let powers = await getPowers();
@@ -43,7 +43,7 @@ router.get("/power", async (req, res) => {
   }
 });
 
-router.get("/power/:id", async (req, res) => {
+router.get("/power/:id", ensureAuthenticated, async (req, res) => {
   try {
     const id = parseInt(req.params.id);
     const query = (req.query.q || "").toString().toLowerCase();

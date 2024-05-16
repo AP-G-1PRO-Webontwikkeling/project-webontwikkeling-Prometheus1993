@@ -1,3 +1,5 @@
+import { ObjectId } from "mongodb";
+
 export interface Power {
   id: number;
   type: string;
@@ -18,6 +20,13 @@ export interface Character {
   role: string;
   hobbies: string[];
   powers: Power[];
+}
+
+export interface User {
+  _id?: ObjectId;
+  username: string;
+  password?: string;
+  role?: "ADMIN" | "USER";
 }
 
 export {};
