@@ -1,54 +1,29 @@
 import express from "express";
 import { getHeroes, getHeroById, updateHero } from "../databases/database";
-import { ensureAuthenticated } from "../middlewares/auth";
+import { authenticateJWT } from "../middlewares/authenticateJWT";
+import { filterCharacters, sortCharacters } from "../utils/helperFunctions";
 
+// Create a new router
 const router = express.Router();
 
-router.get("/", ensureAuthenticated, async (req, res) => {
+// Route to display the home page
+router.get("/", authenticateJWT, async (req, res) => {
   try {
     const query = (req.query.q || "").toString().toLowerCase();
-    let characters = await getHeroes();
-
-    const filteredCharacters = characters.filter(
-      (character: { name: string }) =>
-        character.name.toLowerCase().includes(query)
-    );
-
     const sortField = (req.query.sortField || "name").toString();
     const sortDirection = (req.query.sortDirection || "asc").toString();
+    
+    let characters = await getHeroes();
 
-    filteredCharacters.sort((a: any, b: any) => {
-      let fieldA = a[sortField];
-      let fieldB = b[sortField];
-
-      if (typeof fieldA === "string") fieldA = fieldA.toUpperCase();
-      if (typeof fieldB === "string") fieldB = fieldB.toUpperCase();
-
-      if (sortDirection === "asc") {
-        if (fieldA < fieldB) {
-          return -1;
-        } else if (fieldA > fieldB) {
-          return 1;
-        } else {
-          return 0;
-        }
-      } else {
-        if (fieldA > fieldB) {
-          return -1;
-        } else if (fieldA < fieldB) {
-          return 1;
-        } else {
-          return 0;
-        }
-      }
-    });
+    const filteredCharacters = filterCharacters(characters, query);
+    const sortedCharacters = sortCharacters(filteredCharacters, sortField, sortDirection);
 
     res.render("index", {
-      characters: filteredCharacters,
+      characters: sortedCharacters,
       sortField,
       sortDirection,
       q: query,
-      user: req.user // Voeg de user variabele toe aan de render context
+      user: req.user
     });
   } catch (error) {
     console.error(error);
@@ -56,7 +31,8 @@ router.get("/", ensureAuthenticated, async (req, res) => {
   }
 });
 
-router.get("/character/:id", ensureAuthenticated, async (req, res) => {
+// Route to display the character page
+router.get("/character/:id", authenticateJWT, async (req, res) => {
   try {
     const id = parseInt(req.params.id);
     const query = (req.query.q || "").toString().toLowerCase();
@@ -74,7 +50,7 @@ router.get("/character/:id", ensureAuthenticated, async (req, res) => {
 });
 
 // Route to display the edit form
-router.get("/characters/:id/edit", ensureAuthenticated, async (req, res) => {
+router.get("/characters/:id/edit", authenticateJWT, async (req, res) => {
   try {
     const id = parseInt(req.params.id);
     const query = (req.query.q || "").toString().toLowerCase();
@@ -90,8 +66,8 @@ router.get("/characters/:id/edit", ensureAuthenticated, async (req, res) => {
   }
 });
 
-// Route to handle the form submission
-router.post("/update-character/:id", ensureAuthenticated, async (req, res) => {
+// Route to update the character
+router.post("/update-character/:id", authenticateJWT, async (req, res) => {
   try {
     const id = parseInt(req.params.id);
     const { name, description, age, role } = req.body;

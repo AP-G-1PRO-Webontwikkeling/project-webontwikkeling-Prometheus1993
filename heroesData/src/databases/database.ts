@@ -4,7 +4,7 @@ import { config } from "dotenv";
 
 config();
 
-// Configureer de URL met het juiste MongoDB URI schema.
+// MongoDB connection string
 const uri = process.env.MONGODB_URI || "";
 const client = new MongoClient(uri);
 let db: Db;
@@ -85,6 +85,7 @@ export async function checkAndFetchDataHeroes(): Promise<void> {
     console.log("Data already exists in MongoDB");
   }
 }
+
 export async function checkAndFetchDataPowers(): Promise<void> {
   const db = await connectDB();
   const collection = db.collection<Power>("powers");

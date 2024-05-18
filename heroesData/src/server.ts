@@ -1,8 +1,7 @@
 import express from "express";
 import path from "path";
 import dotenv from "dotenv";
-import passport from 'passport';
-import connectFlash from 'connect-flash';
+import cookieParser from 'cookie-parser';
 import indexRouter from "./routes/index";
 import powersRouter from "./routes/power";
 import authRouter from "./routes/auth";
@@ -12,35 +11,31 @@ import {
 } from "./databases/database";
 import bodyParserMiddleware from "./middlewares/bodyParser";
 import errorHandlerMiddleware from "./middlewares/errorHandler";
-import sessionMiddleware from "./middlewares/session";
 import staticFilesMiddleware from "./middlewares/staticFiles";
 import { initializeDefaultUsers } from './models/user';
+import { authenticateJWT } from './middlewares/authenticateJWT'; 
 
 dotenv.config();
 
 const app = express();
 
-// Passport config
-require('./config/passport');
-
-// Set up the view engine
+// the view engine
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, '../public/views'));
 
-// Use middleware
+// middleware
 bodyParserMiddleware(app);
 staticFilesMiddleware(app);
-sessionMiddleware(app);
-app.use(passport.initialize());
-app.use(passport.session());
-
-
-app.use(connectFlash());
+app.use(cookieParser());
 
 // Routes
+app.use("/auth", authRouter);
 app.use("/", indexRouter);
 app.use("/", powersRouter);
-app.use("/auth", authRouter);
+
+
+
+app.use(authenticateJWT);
 
 // Error Handling Middleware
 app.use(errorHandlerMiddleware);

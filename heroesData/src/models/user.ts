@@ -2,11 +2,14 @@ import { MongoClient } from 'mongodb';
 import bcrypt from 'bcrypt';
 import { User } from '../interfaces/types';
 
+// MongoDB connection string
 const client = new MongoClient(process.env.MONGODB_URI || '');
+
+// Bcrypt salt rounds
 const saltRounds: number = 10;
 let userCollection: any;
 
-
+// Connect to the database
 async function connectToDatabase() {
   if (!userCollection) {
     await client.connect();
@@ -16,6 +19,7 @@ async function connectToDatabase() {
 
 export { userCollection };
 
+// Check if a username is already registered
 async function isUsernameRegistered(username: string): Promise<boolean> {
   try {
       const existingUser = await userCollection.findOne({ username });
@@ -26,6 +30,7 @@ async function isUsernameRegistered(username: string): Promise<boolean> {
   }
 }
 
+// Register a new user
 export async function registerUser(username: string, password: string, role: 'ADMIN' | 'USER'): Promise<void>  {
   if (!username || !password) {
     throw new Error('Username and password must be provided');
@@ -43,7 +48,8 @@ export async function registerUser(username: string, password: string, role: 'AD
   });
 }
 
-export async function loginUser(username: string, password: string) {
+// Login a user
+export async function loginUser(username: string, password: string): Promise<User> {
   if (!username || !password) {
     throw new Error('Username and password are required');
   }
@@ -61,7 +67,8 @@ export async function loginUser(username: string, password: string) {
   }
 }
 
-export async function initializeDefaultUsers() {
+// Initialize default users
+export async function initializeDefaultUsers(): Promise<void>{
   await connectToDatabase();
   const adminUser = await userCollection.findOne({ username: 'admin' });
   const regularUser = await userCollection.findOne({ username: 'user' });

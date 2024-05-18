@@ -1,38 +1,25 @@
 import express from "express";
 import { getPowers, getPowerById } from "../databases/database";
-import { ensureAuthenticated } from "../middlewares/auth";
+import { authenticateJWT } from "../middlewares/authenticateJWT";
+import { filterPowers, sortPowers } from "../utils/helperFunctions";
+
+// Create a new router
 const router = express.Router();
 
-router.get("/power", ensureAuthenticated, async (req, res) => {
+// Route to display the powers page
+router.get("/power", authenticateJWT, async (req, res) => {
   try {
     const query = (req.query.q || "").toString().toLowerCase();
-    let powers = await getPowers();
-
-    const filteredPowers = powers.filter((power: { type: string }) =>
-      power.type.toLowerCase().includes(query)
-    );
-
     const sortField = (req.query.sortField as string) || "strength";
     const sortDirection = (req.query.sortDirection as string) || "asc";
 
-    filteredPowers.sort((a: any, b: any) => {
-      let fieldA = a[sortField];
-      let fieldB = b[sortField];
+    let powers = await getPowers();
 
-      if (typeof fieldA === "string" && typeof fieldB === "string") {
-        fieldA = fieldA.toUpperCase();
-        fieldB = fieldB.toUpperCase();
-      }
-
-      if (sortDirection === "asc") {
-        return fieldA < fieldB ? -1 : fieldA > fieldB ? 1 : 0;
-      } else {
-        return fieldA > fieldB ? -1 : fieldA < fieldB ? 1 : 0;
-      }
-    });
+    const filteredPowers = filterPowers(powers, query);
+    const sortedPowers = sortPowers(filteredPowers, sortField, sortDirection);
 
     res.render("powers", {
-      powers: filteredPowers,
+      powers: sortedPowers,
       sortField,
       sortDirection,
       q: query,
@@ -43,7 +30,8 @@ router.get("/power", ensureAuthenticated, async (req, res) => {
   }
 });
 
-router.get("/power/:id", ensureAuthenticated, async (req, res) => {
+// Route to display the power page
+router.get("/power/:id", authenticateJWT, async (req, res) => {
   try {
     const id = parseInt(req.params.id);
     const query = (req.query.q || "").toString().toLowerCase();
@@ -54,7 +42,7 @@ router.get("/power/:id", ensureAuthenticated, async (req, res) => {
     }
     res.render("powerPage", { power, q: query });
   } catch (error) {
-    console.error("Error in /power/:powerId route:", error);
+    console.error("Error in /power/:id route:", error);
     res.status(500).send("An error occurred while processing your request.");
   }
 });

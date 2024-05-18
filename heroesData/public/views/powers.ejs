@@ -1,33 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="/css/style.css" rel="stylesheet">
-  <title>Heroes</title>
-</head>
+<%- include('./partials/header.ejs') %>
 <body class="bg-gray-100 flex flex-col min-h-screen">
-  <nav class="bg-gray-800 text-yellow-400 p-4">
-    <div class="container mx-auto flex items-center justify-between">
-      <!-- Navbar Links -->
-      <ul class="flex space-x-8">
-        <li>
-          <a href="/" class="hover:text-gray-300">Characters</a>
-        </li>
-        <li>
-          <a href="/power" class="hover:text-gray-300">Powers</a>
-        </li>
-      </ul>
-
-      <!-- Search Bar -->
-      <form action="/" method="get" class="flex items-center">
-        <label for="search" class="sr-only"></label>
-        <input type="text" id="search" name="q" value="<%= q %>" class="bg-gray-700 text-yellow-400 border-2 border-gray-600 rounded-lg py-1 px-2">
-        <button type="submit" class="bg-yellow-500 text-gray-800 rounded-lg ml-2 py-1 px-2">Zoeken</button>
-      </form>
-    </div>
-  </nav>
+  <%- include('./partials/nav.ejs') %>
 
   <main class="flex justify-center w-full bg-gradient-to-r from-cyan-500 to-blue-500 flex-grow">
     <div class="container mx-auto py-8">
@@ -80,8 +53,6 @@
     </div>
   </main>
 
-  <footer class="bg-gray-800 text-yellow-400 p-4 text-center">
-    <p>&copy; 2023 Heroes. All rights reserved.</p>
-  </footer>
+  <%- include('./partials/footer.ejs') %>
 </body>
 </html>

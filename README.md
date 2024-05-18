@@ -28,6 +28,4 @@ Elk personage in `characters.json` heeft de volgende eigenschappen:
 - `hobbies`: Een lijst van hobby's of interesses van het personage.
 - `powers`: Een object met informatie over de krachten van het personage, afkomstig uit `powers.json`.
 
-## Hoe te Gebruiken
 
-Dit project kan worden gebruikt als een database voor het ontwikkelen van een anime/manga-thema kaartspel, of als een educatieve bron voor fans.
