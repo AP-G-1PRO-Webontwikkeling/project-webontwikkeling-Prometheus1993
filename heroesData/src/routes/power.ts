@@ -1,13 +1,12 @@
 import express from "express";
 import { getPowers, getPowerById } from "../databases/database";
-import { authenticateJWT } from "../middlewares/authenticateJWT";
 import { filterPowers, sortPowers } from "../utils/helperFunctions";
 
 // Create a new router
 const router = express.Router();
 
 // Route to display the powers page
-router.get("/power", authenticateJWT, async (req, res) => {
+router.get("/power", async (req, res) => {
   try {
     const query = (req.query.q || "").toString().toLowerCase();
     const sortField = (req.query.sortField as string) || "strength";
@@ -31,7 +30,7 @@ router.get("/power", authenticateJWT, async (req, res) => {
 });
 
 // Route to display the power page
-router.get("/power/:id", authenticateJWT, async (req, res) => {
+router.get("/power/:id", async (req, res) => {
   try {
     const id = parseInt(req.params.id);
     const query = (req.query.q || "").toString().toLowerCase();

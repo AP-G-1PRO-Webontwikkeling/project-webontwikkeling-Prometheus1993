@@ -29,3 +29,6 @@ Elk personage in `characters.json` heeft de volgende eigenschappen:
 - `powers`: Een object met informatie over de krachten van het personage, afkomstig uit `powers.json`.
 
 
+## Live Demo
+
+[live demo] 

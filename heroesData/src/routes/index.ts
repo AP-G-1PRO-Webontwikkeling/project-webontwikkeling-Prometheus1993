@@ -1,13 +1,13 @@
 import express from "express";
 import { getHeroes, getHeroById, updateHero } from "../databases/database";
-import { authenticateJWT } from "../middlewares/authenticateJWT";
+
 import { filterCharacters, sortCharacters } from "../utils/helperFunctions";
 
 // Create a new router
 const router = express.Router();
 
 // Route to display the home page
-router.get("/", authenticateJWT, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const query = (req.query.q || "").toString().toLowerCase();
     const sortField = (req.query.sortField || "name").toString();
@@ -32,7 +32,7 @@ router.get("/", authenticateJWT, async (req, res) => {
 });
 
 // Route to display the character page
-router.get("/character/:id", authenticateJWT, async (req, res) => {
+router.get("/character/:id", async (req, res) => {
   try {
     const id = parseInt(req.params.id);
     const query = (req.query.q || "").toString().toLowerCase();
@@ -50,7 +50,7 @@ router.get("/character/:id", authenticateJWT, async (req, res) => {
 });
 
 // Route to display the edit form
-router.get("/characters/:id/edit", authenticateJWT, async (req, res) => {
+router.get("/characters/:id/edit", async (req, res) => {
   try {
     const id = parseInt(req.params.id);
     const query = (req.query.q || "").toString().toLowerCase();
@@ -67,7 +67,7 @@ router.get("/characters/:id/edit", authenticateJWT, async (req, res) => {
 });
 
 // Route to update the character
-router.post("/update-character/:id", authenticateJWT, async (req, res) => {
+router.post("/update-character/:id", async (req, res) => {
   try {
     const id = parseInt(req.params.id);
     const { name, description, age, role } = req.body;

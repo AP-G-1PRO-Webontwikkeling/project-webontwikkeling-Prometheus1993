@@ -30,11 +30,11 @@ app.use(cookieParser());
 
 // Routes
 app.use("/auth", authRouter);
-app.use("/", indexRouter);
-app.use("/", powersRouter);
+app.use("/",authenticateJWT, indexRouter);
+app.use("/",authenticateJWT, powersRouter);
 
 
-
+// Middleware to authenticate JWT
 app.use(authenticateJWT);
 
 // Error Handling Middleware
