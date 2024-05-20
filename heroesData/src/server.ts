@@ -8,6 +8,7 @@ import authRouter from "./routes/auth";
 import {
   checkAndFetchDataHeroes,
   checkAndFetchDataPowers,
+  closeDB
 } from "./databases/database";
 import bodyParserMiddleware from "./middlewares/bodyParser";
 import errorHandlerMiddleware from "./middlewares/errorHandler";
@@ -41,7 +42,7 @@ app.use(authenticateJWT);
 app.use(errorHandlerMiddleware);
 
 const port = process.env.PORT || 3000;
-app.listen(port, async () => {
+const server = app.listen(port, async () => {
   console.log(`Server running on http://localhost:${port}`);
   try {
     await checkAndFetchDataHeroes();
@@ -51,3 +52,19 @@ app.listen(port, async () => {
     console.error("Failed to fetch or insert data:", error);
   }
 });
+
+
+// Close the database connection when the app is closed
+const gracefulShutdown = async () => {
+  console.log("\nReceived shutdown signal, closing server...");
+  server.close(async () => {
+    console.log("HTTP server closed");
+    await closeDB();
+    process.exit(0);
+  });
+};
+
+process.on("SIGINT", gracefulShutdown); 
+process.on("SIGTERM", gracefulShutdown);
+
+export default app;

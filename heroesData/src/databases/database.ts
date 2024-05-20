@@ -24,6 +24,12 @@ async function connectDB(): Promise<Db> {
   return db;
 }
 
+// Sluit de database connectie.
+export async function closeDB(): Promise<void> {
+  await client.close();
+  console.log("Database connection closed");
+}
+
 // Haal alle helden op uit de database.
 export async function getHeroes(): Promise<Character[]> {
   const db = await connectDB();
@@ -69,35 +75,34 @@ export async function getPowerById(id: number): Promise<Power | null> {
   return await collection.findOne({ id: id });
 }
 
-// Controleer de aanwezigheid van gegevens en haal data op indien niet aanwezig.
 export async function checkAndFetchDataHeroes(): Promise<void> {
   const db = await connectDB();
   const collection = db.collection<Character>("heroes");
-  const dataExists = await collection.findOne({});
-  if (!dataExists) {
-    const response = await fetch(
-      "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroesData/assets/json/characters.json"
-    );
-    const data: Character[] = await response.json();
-    await collection.insertMany(data);
-    console.log("Data fetched and saved to MongoDB");
-  } else {
-    console.log("Data already exists in MongoDB");
-  }
+
+  // Leeg de collectie
+  await collection.deleteMany({});
+
+  // Haal nieuwe data op en sla deze op in de database
+  const response = await fetch(
+    "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroesData/assets/json/characters.json"
+  );
+  const data: Character[] = await response.json();
+  await collection.insertMany(data);
+  console.log("Data fetched and saved to MongoDB");
 }
 
 export async function checkAndFetchDataPowers(): Promise<void> {
   const db = await connectDB();
   const collection = db.collection<Power>("powers");
-  const dataExists = await collection.findOne({});
-  if (!dataExists) {
-    const response = await fetch(
-      "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroesData/assets/json/powers.json"
-    );
-    const data: Power[] = await response.json();
-    await collection.insertMany(data);
-    console.log("Data fetched and saved to MongoDB");
-  } else {
-    console.log("Data already exists in MongoDB");
-  }
+
+  // Leeg de collectie
+  await collection.deleteMany({});
+
+  // Haal nieuwe data op en sla deze op in de database
+  const response = await fetch(
+    "https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Prometheus1993/main/heroesData/assets/json/powers.json"
+  );
+  const data: Power[] = await response.json();
+  await collection.insertMany(data);
+  console.log("Data fetched and saved to MongoDB");
 }
