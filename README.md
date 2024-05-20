@@ -31,4 +31,4 @@ Elk personage in `characters.json` heeft de volgende eigenschappen:
 
 ## Live Demo
 
-[live demo] 
+[live demo] https://project-webontwikkeling-prometheus1993.onrender.com/auth/login
