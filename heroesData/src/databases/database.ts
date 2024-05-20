@@ -75,6 +75,7 @@ export async function getPowerById(id: number): Promise<Power | null> {
   return await collection.findOne({ id: id });
 }
 
+// haal de helden en superkrachten op en sla deze op in de database.
 export async function checkAndFetchDataHeroes(): Promise<void> {
   const db = await connectDB();
   const collection = db.collection<Character>("heroes");
@@ -91,6 +92,7 @@ export async function checkAndFetchDataHeroes(): Promise<void> {
   console.log("Data fetched and saved to MongoDB");
 }
 
+// Haal de superkrachten op en sla deze op in de database.
 export async function checkAndFetchDataPowers(): Promise<void> {
   const db = await connectDB();
   const collection = db.collection<Power>("powers");
